@@ -1,0 +1,1 @@
+-e git+https://github.com/WisdomAnalyst/End-to-end-Machine-Learning-Project-with-Mlflow.git@90b5f9f881fe7c6ed4f44cde271ee4d3e7a407c0#egg=Mlproject
