@@ -3,8 +3,8 @@
 
 ## WorkFlows
 
-1. Update config.yaml
-2. Update schema.yaml
+1. update config.yaml
+2. update schema.yaml
 3. update params.yaml
 4. update entity
 5. update the configuration manager insrc config
@@ -12,5 +12,6 @@
 7. update the pipelines
 8. update the main.py
 9. update the app.py
+
 
 
