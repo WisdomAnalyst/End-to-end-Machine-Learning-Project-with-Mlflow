@@ -59,6 +59,6 @@ def load_bin(path: Path) -> Any:
 
 @ensure_annotations
 def get_size(path: Path) -> str:
-    # This function is incomplete in the provided code
-    # You may want to add the implementation here
-    pass
+    size_in_bytes = os.path.getsize(path)
+    size_in_kb = size_in_bytes / 1024
+    return f"{size_in_kb:.2f} KB"
