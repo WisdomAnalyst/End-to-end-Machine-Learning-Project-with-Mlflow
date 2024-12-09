@@ -15,7 +15,7 @@ setuptools.setup(
     version=__version__,
     author=AUTHOR_USER_NAME,
     author_email=AUTHOR_EMAIL,
-    description="A short description of your project",
+    description="python package for Ml app",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
