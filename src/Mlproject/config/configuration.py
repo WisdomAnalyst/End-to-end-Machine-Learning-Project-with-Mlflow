@@ -1,6 +1,6 @@
 from Mlproject.config import *
-from Mlproject.config.constants import *
 from Mlproject.utils.common import read_yaml, create_directories
+from Mlproject.entity.config_entity import *
 
 class ConfigurationManager:
     def __init__(
