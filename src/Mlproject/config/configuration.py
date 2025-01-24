@@ -1,7 +1,6 @@
 from Mlproject.config import *
 from Mlproject.utils.common import read_yaml, create_directories
-from Mlproject.entity.config_entity import (DataIngestionConfig, 
-                                            DataValidationConfig)
+from Mlproject.entity.config_entity import DataIngestionConfig, DataValidationConfig
 from Mlproject.entity.config_entity import *
 import logging
 from Mlproject.constants import *
@@ -26,7 +25,9 @@ class ConfigurationManager:
         self.params = read_yaml(params_filepath)
         self.schema = read_yaml(schema_filepath)
         
-        
+        self.artifacts_root = Path(self.config.get('artifacts_root', 'artifacts'))
+
+        create_directories([self.artifacts_root])
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
