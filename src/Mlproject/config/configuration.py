@@ -1,6 +1,6 @@
 from Mlproject.config import *
 from Mlproject.utils.common import read_yaml, create_directories
-from Mlproject.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from Mlproject.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
 from Mlproject.entity.config_entity import *
 import logging
 from Mlproject.constants import *
@@ -67,3 +67,20 @@ class ConfigurationManager:
 
 
     
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        try:
+            config = self.config.data_transformation
+            logging.info(f"Data transformation config: {config}")
+        except Exception as e:
+            logging.error(f"Error reading data_transformation config: {str(e)}")
+            logging.error(f"Available config keys: {self.config.keys()}")
+            raise
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=Path(config.root_dir),
+            data_path=Path(config.data_path)
+        )
+
+        return data_transformation_config
