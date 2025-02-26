@@ -44,7 +44,7 @@ class ConfigurationManager:
     
     def get_data_validation_config(self) -> DataValidationConfig:
         config = self.config.get('data_validation', {})
-        schema = self.schema.get('Columns', {})
+        schema = self.schema.get('COLUMNS', {}) 
         logging.info(f"Loaded schema: {schema}")
         
         # Use default values if keys are missing
@@ -63,7 +63,6 @@ class ConfigurationManager:
 
         logging.info(f"Data Validation Config: {data_validation_config}")
         return data_validation_config   
-
 
     
     def get_data_transformation_config(self) -> DataTransformationConfig:
@@ -107,11 +106,10 @@ class ConfigurationManager:
         return model_trainer_config 
     
 
-
-    def get_model_config(self) -> ModelEvaluationConfig:
-        config = self.config.model_Evaluation
-        params = self.params.Elasticnet
-        schema = self.schema.TARGET_COLUMNS
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation  
+        params = self.params.ElasticNet  
+        schema = self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
 
@@ -122,7 +120,7 @@ class ConfigurationManager:
             all_params=params,
             metric_file_name=config.metric_file_name,
             target_column=schema.name,
-            mlflow_url='https://dagshub.com/WisdomAnalyst/End-to-end-Machine-Learning-Project-with-Mlflow.mlflow'
+            mlflow_uri='https://dagshub.com/WisdomAnalyst/End-to-end-Machine-Learning-Project-with-Mlflow.mlflow'
         )
 
-        return model_evaluation_config
+        return model_evaluation_config    

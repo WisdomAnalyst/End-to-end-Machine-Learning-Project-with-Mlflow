@@ -1,4 +1,4 @@
-Columns:
+COLUMNS:
   fixed acidity: float64
   volatile acidity: float64 
   citric acid: float64
@@ -14,4 +14,3 @@ Columns:
 
 TARGET_COLUMN:
   name: quality
-
