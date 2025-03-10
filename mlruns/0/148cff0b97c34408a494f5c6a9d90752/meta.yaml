@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/user/Desktop/End-to%20end-%20ML-project-with-ML-flow/End-to-end-Machine-Learning-Project-with-Mlflow/mlruns/0/148cff0b97c34408a494f5c6a9d90752/artifacts
+end_time: 1740624115985
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 148cff0b97c34408a494f5c6a9d90752
+run_name: ElasticNet_Wine_Quality_Model
+run_uuid: 148cff0b97c34408a494f5c6a9d90752
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740624070570
+status: 4
+tags: []
+user_id: user

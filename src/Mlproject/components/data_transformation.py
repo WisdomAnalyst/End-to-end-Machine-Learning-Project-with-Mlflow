@@ -37,3 +37,6 @@ class DataTransformation:
         except Exception as e:
             logging.error(f"Error in train_test_splitting: {str(e)}")
             raise e
+
+
+            

@@ -1,9 +1,7 @@
-from MLproject.config.configuration import ConfigurationManager
-from MLproject.components.model_evaluation import ModelEvaluation
-from MLproject import logger
-
-
-STAGE_NAME = "model evaluation stage"
+from Mlproject.config.configuration import ConfigurationManager
+from Mlproject import logger
+from Mlproject.components.model_Evaluation import ModelEvaluation
+STAGE_NAME = "Model evaluation stage"
 
 class ModelEvaluationTrainingPipeline:
     def __init__(self):
