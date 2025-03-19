@@ -1,10 +1,20 @@
 import streamlit as st
 import numpy as np
-from Mlproject.pipeline.prediction import PredictionPipeline
+import pandas as pd
+import os
+import sys
+from pathlib import Path
+
+# Add root directory to path
+root_dir = Path(__file__).resolve().parent
+sys.path.append(str(root_dir))
+
 try:
-    import pyarrow
+    from Mlproject.pipeline.prediction import PredictionPipeline
 except ImportError:
-    pass 
+    st.error("Could not import PredictionPipeline. Check your project structure.")
+
+
 
 
 # Set page config
