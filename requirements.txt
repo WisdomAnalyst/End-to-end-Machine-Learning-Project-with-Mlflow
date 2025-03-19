@@ -6,6 +6,7 @@ scikit-learn
 matplotlib
 python-box==6.0.2
 PyYAML
+pytest>=7.0.0
 tqdm
 ensure==1.0.2
 joblib
