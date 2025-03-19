@@ -1,6 +1,11 @@
 import streamlit as st
 import numpy as np
 from Mlproject.pipeline.prediction import PredictionPipeline
+try:
+    import pyarrow
+except ImportError:
+    pass 
+
 
 # Set page config
 st.set_page_config(
