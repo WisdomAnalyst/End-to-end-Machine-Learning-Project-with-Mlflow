@@ -1,4 +1,5 @@
-python3-dev
-gcc
+python-dev
 build-essential
 cmake
+gcc
+g++
