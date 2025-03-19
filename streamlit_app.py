@@ -15,8 +15,6 @@ except ImportError:
     st.error("Could not import PredictionPipeline. Check your project structure.")
 
 
-
-
 # Set page config
 st.set_page_config(
     page_title="Wine Quality Prediction",
