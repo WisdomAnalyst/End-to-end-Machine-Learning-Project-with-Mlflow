@@ -1,5 +1,18 @@
 # End-to-end-Machine-Learning-Project-with-Mlflow
-http://127.0.0.1:8080/
+
+
+This repository contains an **end-to-end machine learning project** for predicting **wine quality** using MLflow for experiment tracking, Streamlit for interactive visualization, and AWS ECS/ECR for deployment.
+
+---
+
+ **Project Overview**
+This project demonstrates the **full lifecycle of an ML model**, from data ingestion to deployment. The model predicts **wine quality** based on physicochemical attributes.
+
+ **Tech Stack**
+- **Machine Learning:** `Scikit-learn`, `ElasticNet`
+- **MLOps:** `MLflow`, `DVC`
+- **Deployment:** `Streamlit`, `Docker`, `AWS ECS`
+- **CI/CD:** `GitHub Actions`, `AWS ECR`
 
 ## WorkFlows
 
