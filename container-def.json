@@ -1,0 +1,20 @@
+{
+    "family": "wine-quality-task",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "containerDefinitions": [
+        {
+            "name": "wine-quality-container",
+            "image": "533267162979.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    ]
+}
