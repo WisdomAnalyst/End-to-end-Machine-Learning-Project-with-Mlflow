@@ -1,35 +1,32 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import os
 import sys
 from pathlib import Path
 
-# Add root directory to path
-root_dir = Path(__file__).resolve().parent
-sys.path.append(str(root_dir))
 
-try:
-    from Mlproject.pipeline.prediction import PredictionPipeline
-except ImportError:
-    st.error("Could not import PredictionPipeline. Check your project structure.")
-
-
-# Set page config
 st.set_page_config(
     page_title="Wine Quality Prediction",
     page_icon="🍷",
     layout="wide"
 )
 
-# Main title
+# Ensure correct module path
+root_dir = Path(__file__).resolve().parent.parent  
+sys.path.append(str(root_dir))
+
+try:
+    from Mlproject.pipeline.prediction import predictionpipeline
+except ImportError as e:
+    st.error(f"Could not import PredictionPipeline. Error: {str(e)}")
+
+# App title
 st.title("Wine Quality Prediction App 🍷")
 
-# Create two columns for better layout
+# Layout
 col1, col2 = st.columns(2)
 
 with col1:
-    # Input fields
     fixed_acidity = st.number_input("Fixed Acidity", min_value=0.0, max_value=20.0, value=7.0)
     volatile_acidity = st.number_input("Volatile Acidity", min_value=0.0, max_value=2.0, value=0.5)
     citric_acid = st.number_input("Citric Acid", min_value=0.0, max_value=2.0, value=0.3)
@@ -44,10 +41,9 @@ with col2:
     sulphates = st.number_input("Sulphates", min_value=0.0, max_value=2.0, value=0.5)
     alcohol = st.number_input("Alcohol", min_value=8.0, max_value=15.0, value=10.5)
 
-# Predict button
+# Prediction button
 if st.button("Predict Wine Quality"):
     try:
-        # Prepare input data
         input_data = {
             'fixed_acidity': fixed_acidity,
             'volatile_acidity': volatile_acidity,
@@ -61,31 +57,32 @@ if st.button("Predict Wine Quality"):
             'sulphates': sulphates,
             'alcohol': alcohol
         }
-        
-        # Convert to numpy array
+
+        # Convert input to array
         data = np.array(list(input_data.values())).reshape(1, -1)
-        
-        # Make prediction
-        obj = PredictionPipeline()
-        prediction = obj.predict(data)
-        
-        # Display prediction
-        st.success(f"Predicted Wine Quality: {prediction[0]}")
-        
-        # Display input values
-        st.subheader("Input Parameters:")
-        st.json(input_data)
-        
+
+        # Ensure PredictionPipeline is initialized properly
+        if 'PredictionPipeline' not in globals():
+            st.error("Model is not properly loaded. Check your imports.")
+        else:
+            obj = PredictionPipeline()
+            prediction = obj.predict(data)
+
+            # Display prediction
+            st.success(f"Predicted Wine Quality: {prediction[0]}")
+            st.subheader("Input Parameters:")
+            st.json(input_data)
+
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
 
-# Add information about the project
+# Sidebar information
 st.sidebar.header("About")
 st.sidebar.info("""
 This app predicts the quality of wine based on physicochemical tests.
 The prediction is made using a machine learning model trained on the Wine Quality Dataset.
 """)
 
-# Add footer
+# Footer
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Made with ❤️ by Wisdom")
