@@ -108,7 +108,7 @@ export MLFLOW_TRACKING_PASSWORD=781aa8b98086477f57088d72da8f137a4686f662
 - **ECR (Elastic Container Registry)**
   ```bash
   # Repository Name: wine-quality-prediction
-  # URI: 533267162979.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction
+  # URI: 5332********.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction
 ECS (Elastic Container Service)
 # Cluster Name: wine-quality-cluster
 # Task Definition: wine-quality-task
