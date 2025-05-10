@@ -25,6 +25,7 @@ This project demonstrates the **full lifecycle of an ML model**, from data inges
 7. update pipelines
 8. update main.py
 9. update app.py
+10. added other workflows
 
 
 
@@ -43,12 +44,12 @@ https://github.com/WisdomAnalyst/End-to-end-Machine-Learning-Project-with-Mlflow
 ### STEP 01- Create a conda environment after opening the repository
 
 ***bash
-conda create -n mlproj python=3.8 -y
+conda create -n domwi python=3.8 -y
 ***
 
 
 ***bash
-conda activate mlproj
+conda activate domwi
 ***
 
 ### STEP 2 - install the requirements 
@@ -56,9 +57,11 @@ conda activate mlproj
 pip install -r requirements.txt
 ***
 
+## folow the workflows...
+
 
 ***bash
-#finally run the following command 
+##finally run the following command 
 python app.py
 
 
@@ -66,7 +69,7 @@ now,
 ***bash
 open up your local host and port
 
-
+Track your experiment during model Training
 #MLflow
 [Documentation](https://mlflow.org/docs/latest/index.html)
 
@@ -116,24 +119,6 @@ Added GitHub Secrets:
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
 
-3. Project Structure
-End-to-end-Machine-Learning-Project-with-Mlflow/
-├── .github/
-│   └── workflows/
-│       └── main.yaml
-├── src/
-│   └── Mlproject/
-│       └── pipeline/
-│           └── prediction.py
-├── templates/
-│   └── index.html
-├── static/
-│   └── css/
-├── app.py
-├── Dockerfile
-├── requirements.txt
-├── setup.py
-└── README.md
 
 4. Docker Configuration
 # Use Python 3.8 slim-buster as base image
@@ -159,13 +144,13 @@ CMD ["python3", "app.py"]
 docker build -t wine-quality-prediction .
 
 # Login to ECR
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267162979.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 5332********dkr.ecr.us-east-1.amazonaws.com
 
 # Tag image
-docker tag wine-quality-prediction:latest 533267162979.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
+docker tag wine-quality-prediction:latest 5332********dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
 
 # Push to ECR
-docker push 533267162979.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
+docker push 5332*********.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
 
 6. GitHub Actions Workflow
 name: ML Model CI/CD
@@ -208,7 +193,7 @@ Task Definition:
 Family: wine-quality-task
 CPU: 0.25 vCPU
 Memory: 0.5 GB
-Container Image: 533267162979.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
+Container Image: 53326*******.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
 Port Mappings: 8080
 Service Configuration:
 
