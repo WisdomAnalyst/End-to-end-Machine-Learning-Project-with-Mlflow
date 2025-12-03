@@ -85,7 +85,7 @@ Track your experiment during model Training
 
 
 MLFLOW_TRACKING_USERNAME=WisdomAnalyst
-MLFLOW_TRACKING_PASSWORD=781aa8b98086477f57088d72da8f137a4686f662
+MLFLOW_TRACKING_PASSWORD=781aa8b9808647*******2da8f137a4686f662
 MLFLOW_TRACKING_URI=https://dagshub.com/WisdomAnalyst/End-to-end-Machine-Learning-Project-with-Mlflow.mlflow
 python script.py
 
@@ -98,7 +98,7 @@ export MLFLOW_TRACKING_URI=https://dagshub.com/WisdomAnalyst/End-to-end-Machine-
 
 export MLFLOW_TRACKING_USERNAME=WisdomAnalyst
 
-export MLFLOW_TRACKING_PASSWORD=781aa8b98086477f57088d72da8f137a4686f662
+export MLFLOW_TRACKING_PASSWORD=781aa8b980*******88d72da8f137a4686f662
 
 
 
@@ -191,8 +191,6 @@ jobs:
 Task Definition:
 
 Family: wine-quality-task
-CPU: 0.25 vCPU
-Memory: 0.5 GB
 Container Image: 53326*******.dkr.ecr.us-east-1.amazonaws.com/wine-quality-prediction:latest
 Port Mappings: 8080
 Service Configuration:
